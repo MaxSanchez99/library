@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.card {
+    border: solid 4px black;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input label {
+    align-self: flex-start;
+}

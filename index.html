@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Library</h1>
+    <div id="container">
+        
+    </div>
+
+    <button id="modal-btn">Add a Book</button>
+    <dialog id="modal">
+        <form method="dialog" id="modal-form">
+            <div class="input">
+                <label for="title" >Title </label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            <div class="input">
+                <label for="author" >Author </label>
+                <input type="text" id="author" name="author" required>
+            </div>
+
+            <div class="input">
+                <label for="pages">Pages </label>
+                <input type="number" id="pages" name="pages" min="1" required>
+            </div>
+
+            <div class="input">
+                <label for="read">Read</label>
+                <select id="read" name="pages">
+                    <option value="no">no</option>
+                    <option value="yes">yes</option>
+                </select>
+            </div>
+
+            <button type='button' id="close">Cancel</button>
+            <button type="submit">Add</button>
+        </form>
+
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>

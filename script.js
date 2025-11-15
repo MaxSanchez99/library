@@ -26,38 +26,69 @@ form.addEventListener('submit', (e) => {
 
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    // the constructor...
-    if (!new.target) {
-        throw Error("You must use the 'new' operator to call the constructor");
+// function Book(title, author, pages, read) {
+//     // the constructor...
+//     if (!new.target) {
+//         throw Error("You must use the 'new' operator to call the constructor");
+//     }
+
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read
+//     this.id = crypto.randomUUID();
+// }
+
+// Book.prototype.info = function () {
+//     let readYet = "";
+//     if (read) {
+//         readYet = "have read"
+//     }
+//     else {
+//         readYet = "not read yet";
+//     }
+//     return `${this.title} by ${this.author}, ${pages} pages, ${readYet}`
+// }
+
+// Book.prototype.changeReadStatus = function () {
+//     if (this.read === false) {
+//         this.read = true;
+//     }
+//     else {
+//         this.read = false;
+//     }
+//     displayBooks();
+// }
+
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read
+        this.id = crypto.randomUUID();
     }
 
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read
-    this.id = crypto.randomUUID();
-}
+    info() {
+        let readYet = "";
+        if (read) {
+            readYet = "have read"
+        }
+        else {
+            readYet = "not read yet";
+        }
+        return `${this.title} by ${this.author}, ${pages} pages, ${readYet}`
+    }
 
-Book.prototype.info = function () {
-    let readYet = "";
-    if (read) {
-        readYet = "have read"
+    changeReadStatus() {
+        if (this.read === false) {
+            this.read = true;
+        }
+        else {
+            this.read = false;
+        }
+        displayBooks();
     }
-    else {
-        readYet = "not read yet";
-    }
-    return `${this.title} by ${this.author}, ${pages} pages, ${readYet}`
-}
-
-Book.prototype.changeReadStatus = function () {
-    if (this.read === false) {
-        this.read = true;
-    }
-    else {
-        this.read = false;
-    }
-    displayBooks();
 }
 
 function addBookToLibrary(title, author, pages, read) {
